@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Custom Caps</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="custom_caps">CUSTOM CAPS</string>
+    <string name="signIn">Войти</string>
+    <string name="signUp">Регистрация</string>
+    <string name="shop">Магазин кепок</string>
+    <string name="name">Имя</string>
+    <string name="number">Номер телефона</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="or">────────── или ──────────</string>
+    <string name="already_have">Уже есть аккаунт? Войти</string>
+    <string name="signup">Еще не зарегистрировались? Регистрация</string>
+    <string name="forgot">Забыли пароль? Восстановить пароль</string>
+    <string name="search">Поиск</string>
+    <string name="popular_brands">Популярные Бренды</string>
+    <string name="new_era">New Era</string>
+    <string name="adidas">Adidas</string>
+    <string name="nike">Nike</string>
+    <string name="vans">Vans</string>
+    <string name="bestsellers">Бестселлеры</string>
+    <string name="see_all">Смотреть все</string>
+    <string name="promotions">Акции</string>
+    <string name="new_password">Восстановить пароль</string>
+    <string name="enter_number">Введите номер, указанный при регистрации. Вам будет отправлен код подтверждения</string>
+    <string name="ex_desc">Golden State Warriors \nIcon 59FIFTY Fitted Cap</string>
+    <string name="sizes">Размеры</string>
+    <string name="extended_desc">Кепка Golden State Warriors Icon 59FIFTY Fitted Cap имеет вышитый логотип Warriors на передних панелях, а также надпись World Champs с дополнительными командными нашивками и вышивкой по всей остальной части короны. Дополнительные детали включают цветной логотип NBA команды сзади и серый нижний слой.</string>
+    <string name="similar_products">Похожие товары</string>
+    <string name="price_2500">2500</string>
+    <string name="add_to_shopping_cart">Добавить в корзину</string>
+    <string name="my_account">Мой аккаунт</string>
+    <string name="profile">Профиль</string>
+    <string name="my_orders">Мои заказы</string>
+    <string name="location">Адрес</string>
+    <string name="arslan">Арслан Камчыбеков</string>
+    <string name="arslankamcybekov7_gmail_com">arslankamcybekov7@gmail.com</string>
+    <string name="_996706007740">+996706007740</string>
+    <string name="edit_profile">Редактировать профиль</string>
+    <string name="logout">Выйти из аккаунта</string>
+</resources>

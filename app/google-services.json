@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "312310009970",
+    "project_id": "custom-caps",
+    "storage_bucket": "custom-caps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312310009970:android:ad37985b912eb9b844f2eb",
+        "android_client_info": {
+          "package_name": "kg.geektech.customcaps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312310009970-d2in71g162ukdvhh8c9n5grn9i7c74m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPcPCM-psHJiCTODmSMj9PUKVoS3V7N-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312310009970-d2in71g162ukdvhh8c9n5grn9i7c74m5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

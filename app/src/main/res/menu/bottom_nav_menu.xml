@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/mainFragmentBottom"
+        android:icon="@drawable/ic_main_page"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/purchaseFragmentBottom"
+        android:icon="@drawable/ic_purchase"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/likeFragmentBottom"
+        android:icon="@drawable/ic_favourite"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/profileFragmentBottom"
+        android:icon="@drawable/ic_user"
+        tools:ignore="MenuTitle" />
+
+</menu>

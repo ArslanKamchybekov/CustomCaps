@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.auth.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.signUp.SignUpFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.signIn.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.newPassword.NewPasswordFragment"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_new_password" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.mainPage.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/seeAllFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.seeAll.SeeAllFragment"
+        android:label="fragment_see_all"
+        tools:layout="@layout/fragment_see_all" />
+    <fragment
+        android:id="@+id/capFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.cap.CapFragment"
+        android:label="fragment_cap"
+        tools:layout="@layout/fragment_cap" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.user.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" />
+</navigation>
