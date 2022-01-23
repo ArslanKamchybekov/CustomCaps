@@ -41,4 +41,6 @@
     <string name="_996706007740">+996706007740</string>
     <string name="edit_profile">Редактировать профиль</string>
     <string name="logout">Выйти из аккаунта</string>
+    <string name="facebook_app_id">356748859655920</string>
+    <string name="fb_login_protocol_scheme">fb356748859655920</string>
 </resources>

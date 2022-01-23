@@ -29,16 +29,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkUser() {
-        if (FirebaseAuth.getInstance().currentUser != null){
+        if (FirebaseAuth.getInstance().currentUser != null) {
             navController.navigate(R.id.mainFragment)
-        }else{
+        } else {
             navController.navigate(R.id.authFragment)
         }
     }
 
     private fun initBottomView() {
         binding.bottomNav.setOnNavigationItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.profileFragmentBottom -> navController.navigate(R.id.profileFragment)
                 R.id.mainFragmentBottom -> navController.navigate(R.id.mainFragment)
             }

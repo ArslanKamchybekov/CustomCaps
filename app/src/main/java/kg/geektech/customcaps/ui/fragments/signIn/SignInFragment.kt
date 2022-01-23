@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import com.facebook.CallbackManager
+import com.facebook.FacebookSdk
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -21,6 +23,7 @@ import kg.geektech.customcaps.databinding.FragmentSignInBinding
 class SignInFragment : Fragment() {
 
     private lateinit var binding: FragmentSignInBinding
+
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var googleAuth: FirebaseAuth
 
@@ -50,11 +53,16 @@ class SignInFragment : Fragment() {
 
     private fun initListeners() {
         checkText()
-        binding.btnGoogle.setOnClickListener{
+        binding.btnGoogle.setOnClickListener {
             googleSignIn()
         }
+        binding.btnFacebook.setOnClickListener {
+
+        }
         binding.btnSignIn.setOnClickListener {
-            if (binding.etNumber.text.toString().isEmpty() || binding.etPassword.text.toString().isEmpty()) {
+            if (binding.etNumber.text.toString().isEmpty() || binding.etPassword.text.toString()
+                    .isEmpty()
+            ) {
                 Toast.makeText(context, "Fill up all fields", Toast.LENGTH_SHORT).show()
             } else {
                 navigateTo(R.id.mainFragment)
@@ -93,17 +101,17 @@ class SignInFragment : Fragment() {
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     navigateTo(R.id.mainFragment)
-                    Toast.makeText(requireContext(), "You successfully entered", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "You successfully entered", Toast.LENGTH_SHORT)
+                        .show()
                 } else {
-                    Toast.makeText(requireContext(), "Authentication failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Authentication failed", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
     }
 
-
-
     private fun checkText() {
-        binding.etNumber.addTextChangedListener{ number ->
+        binding.etNumber.addTextChangedListener { number ->
             val password = binding.etPassword.text.toString().trim()
             val number = number.toString().trim()
             binding.btnSignIn.isEnabled = password.isNotEmpty() && number.isNotEmpty()
@@ -114,12 +122,15 @@ class SignInFragment : Fragment() {
             binding.btnSignIn.isEnabled = password.isNotEmpty() && number.isNotEmpty()
         }
     }
+
     private fun navigateTo(resId: Int) {
-        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        val navHostFragment =
+            activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
         val navController = navHostFragment.navController
         navController.navigate(resId)
     }
-    companion object{
+
+    companion object {
         const val RC_SIGN_IN = -1
     }
 }
