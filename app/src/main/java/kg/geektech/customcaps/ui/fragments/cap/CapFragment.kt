@@ -1,14 +1,17 @@
 package kg.geektech.customcaps.ui.fragments.cap
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import com.google.android.material.tabs.TabLayoutMediator
 import kg.geektech.customcaps.R
+import kg.geektech.customcaps.data.caps.Caps
 import kg.geektech.customcaps.databinding.FragmentCapBinding
-import kg.geektech.customcaps.models.ModelCap
 import kg.geektech.customcaps.ui.fragments.mainPage.MainAdapter
 
 class CapFragment : Fragment() {
@@ -25,55 +28,53 @@ class CapFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecyclerView()
+        initViews()
         initListeners()
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun initListeners() {
         binding.fabBack.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.ivFavoriteUnselected.setOnClickListener {
+            if (binding.ivFavoriteUnselected.isVisible) {
+                binding.ivFavoriteUnselected.visibility = View.GONE
+                binding.ivFavoriteSelected.visibility = View.VISIBLE
+            } else {
+                binding.ivFavoriteSelected.visibility = View.GONE
+                binding.ivFavoriteUnselected.visibility = View.VISIBLE
+            }
+
+        }
+        binding.btnAddToShoppingCart.setOnClickListener {
+
+        }
     }
 
-    private fun initRecyclerView() {
-        val adapter = MainAdapter(similar())
-        binding.rvSimilar.adapter = adapter
-        adapter.setOnItemClickListener(object : MainAdapter.OnItemClickListener {
+
+    private fun initViews() {
+        val adapterCaps = MainAdapter(Caps().caps)
+        binding.rvSimilar.adapter = adapterCaps
+        adapterCaps.setOnItemClickListener(object : MainAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 navigateTo(R.id.capFragment)
             }
         })
+
+        val adapterImages = ImageViewAdapter(images())
+        binding.viewPager.adapter = adapterImages
+        TabLayoutMediator(
+            binding.tlImages,
+            binding.viewPager
+        ) { _, _ -> }.attach()
     }
 
-    private fun similar(): List<ModelCap> {
-        val data = mutableListOf<ModelCap>()
-        data.add(
-            ModelCap(
-                R.drawable.img_bestseller,
-                "Adidas",
-                "San Francisco Baseball",
-                "3400 сом"
-            )
+    private fun images(): List<Int> {
+        return mutableListOf(
+            R.drawable.img_bestseller,
+            R.drawable.img_cap
         )
-        data.add(ModelCap(R.drawable.img_bestseller, "Nike", "San Francisco Baseball", "4500 сом"))
-        data.add(ModelCap(R.drawable.img_bestseller, "Vans", "San Francisco Baseball", "5800 сом"))
-        data.add(
-            ModelCap(
-                R.drawable.img_bestseller,
-                "Adidas",
-                "San Francisco Baseball",
-                "3600 сом"
-            )
-        )
-        data.add(
-            ModelCap(
-                R.drawable.img_bestseller,
-                "New Era",
-                "San Francisco Baseball",
-                "3300 сом"
-            )
-        )
-        return data
     }
 
     private fun navigateTo(resId: Int) {

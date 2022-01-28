@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.profileFragmentBottom -> navController.navigate(R.id.profileFragment)
                 R.id.mainFragmentBottom -> navController.navigate(R.id.mainFragment)
+                R.id.favoritesFragmentBottom -> navController.navigate(R.id.favoritesFragment)
             }
             true
         }

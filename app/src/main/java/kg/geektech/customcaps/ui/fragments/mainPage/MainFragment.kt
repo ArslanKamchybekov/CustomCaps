@@ -1,14 +1,16 @@
 package kg.geektech.customcaps.ui.fragments.mainPage
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import kg.geektech.customcaps.R
+import kg.geektech.customcaps.data.caps.Caps
 import kg.geektech.customcaps.databinding.FragmentMainBinding
-import kg.geektech.customcaps.models.ModelCap
 
 class MainFragment : Fragment() {
 
@@ -24,7 +26,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecyclerViews()
+        initViews()
         initListeners()
     }
 
@@ -35,11 +37,25 @@ class MainFragment : Fragment() {
         binding.tvSeeAllProm.setOnClickListener {
             navigateTo(R.id.seeAllFragment)
         }
+        binding.ivSort.setOnClickListener {
+            val bottomSheetDialog = BottomSheetDialog(
+                requireContext(), R.style.BottomSheetDialogTheme
+            )
+            val bottomSheetView = LayoutInflater.from(requireContext())
+                .inflate(
+                    R.layout.bottom_sheet,
+                    binding.root.findViewById(R.id.bottomSheet)
+                ) as LinearLayout?
+            bottomSheetView?.findViewById<View>(R.id.iv_close)?.setOnClickListener {
+                bottomSheetDialog.dismiss()
+            }
+            bottomSheetView?.let { it1 -> bottomSheetDialog.setContentView(it1) }
+            bottomSheetDialog.show()
+        }
     }
 
-    private fun initRecyclerViews() {
-        val adapter = MainAdapter(bestsellers())
-
+    private fun initViews() {
+        val adapter = MainAdapter(Caps().caps)
         binding.rvBestsellers.adapter = adapter
         adapter.setOnItemClickListener(object : MainAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
@@ -52,37 +68,6 @@ class MainFragment : Fragment() {
                 navigateTo(R.id.capFragment)
             }
         })
-    }
-
-    private fun bestsellers(): List<ModelCap> {
-        val data = mutableListOf<ModelCap>()
-        data.add(
-            ModelCap(
-                R.drawable.img_bestseller,
-                "Adidas",
-                "San Francisco Baseball",
-                "3400 сом"
-            )
-        )
-        data.add(ModelCap(R.drawable.img_bestseller, "Nike", "San Francisco Baseball", "4500 сом"))
-        data.add(ModelCap(R.drawable.img_bestseller, "Vans", "San Francisco Baseball", "5800 сом"))
-        data.add(
-            ModelCap(
-                R.drawable.img_bestseller,
-                "Adidas",
-                "San Francisco Baseball",
-                "3600 сом"
-            )
-        )
-        data.add(
-            ModelCap(
-                R.drawable.img_bestseller,
-                "New Era",
-                "San Francisco Baseball",
-                "3300 сом"
-            )
-        )
-        return data
     }
 
     private fun navigateTo(resId: Int) {

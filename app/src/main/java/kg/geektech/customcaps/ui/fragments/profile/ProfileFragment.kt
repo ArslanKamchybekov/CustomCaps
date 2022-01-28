@@ -2,13 +2,13 @@ package kg.geektech.customcaps.ui.fragments.profile
 
 import android.content.DialogInterface
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -54,11 +54,14 @@ class ProfileFragment : Fragment() {
         binding.tvLogout.setOnClickListener {
             setAlertDialog()
         }
+        binding.tvOrders.setOnClickListener {
+            navigateTo(R.id.ordersFragment)
+        }
     }
 
     private fun googleSignOut() {
         FirebaseAuth.getInstance().signOut()
-        Toast.makeText(requireContext(), "You signed out", LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "Вы вышли из аккаунта", LENGTH_SHORT).show()
         navigateTo(R.id.authFragment)
     }
 
@@ -71,18 +74,18 @@ class ProfileFragment : Fragment() {
 
     private fun setAlertDialog() {
         val builder1 = AlertDialog.Builder(requireContext())
-        builder1.setMessage("Are you sure you want to sign out?")
+        builder1.setMessage("Вы точно хотите выйти ?")
         builder1.setCancelable(true)
         builder1.setPositiveButton(
             "Yes"
-        ) { dialog: DialogInterface, id: Int ->
+        ) { dialog: DialogInterface, _: Int ->
             googleSignInClient.signOut()
             googleSignOut()
             dialog.cancel()
         }
         builder1.setNegativeButton(
             "No"
-        ) { dialog: DialogInterface, id: Int -> dialog.cancel() }
+        ) { dialog: DialogInterface, _: Int -> dialog.cancel() }
         val alert11 = builder1.create()
         alert11.show()
     }

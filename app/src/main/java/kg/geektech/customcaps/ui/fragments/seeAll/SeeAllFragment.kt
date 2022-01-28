@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import kg.geektech.customcaps.R
+import kg.geektech.customcaps.data.caps.Caps
 import kg.geektech.customcaps.databinding.FragmentSeeAllBinding
-import kg.geektech.customcaps.models.ModelCap
 import kg.geektech.customcaps.ui.fragments.mainPage.MainAdapter
 
 class SeeAllFragment : Fragment() {
@@ -26,48 +26,17 @@ class SeeAllFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
-        initRecyclerView()
+        initViews()
     }
 
-    private fun initRecyclerView() {
-        val adapter = MainAdapter(type())
+    private fun initViews() {
+        val adapter = MainAdapter(Caps().caps)
         binding.rvType.adapter = adapter
         adapter.setOnItemClickListener(object : MainAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 navigateTo(R.id.capFragment)
             }
         })
-    }
-
-    private fun type(): List<ModelCap> {
-        val data = mutableListOf<ModelCap>()
-        data.add(
-            ModelCap(
-                R.drawable.img_bestseller,
-                "Adidas",
-                "San Francisco Baseball",
-                "3400 сом"
-            )
-        )
-        data.add(ModelCap(R.drawable.img_bestseller, "Nike", "San Francisco Baseball", "4500 сом"))
-        data.add(ModelCap(R.drawable.img_bestseller, "Vans", "San Francisco Baseball", "5800 сом"))
-        data.add(
-            ModelCap(
-                R.drawable.img_bestseller,
-                "Adidas",
-                "San Francisco Baseball",
-                "3600 сом"
-            )
-        )
-        data.add(
-            ModelCap(
-                R.drawable.img_bestseller,
-                "New Era",
-                "San Francisco Baseball",
-                "3300 сом"
-            )
-        )
-        return data
     }
 
     private fun initListeners() {

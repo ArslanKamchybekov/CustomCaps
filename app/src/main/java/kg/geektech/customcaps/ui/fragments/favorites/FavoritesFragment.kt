@@ -1,4 +1,4 @@
-package kg.geektech.customcaps.ui.fragments.newPassword
+package kg.geektech.customcaps.ui.fragments.favorites
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,27 +7,35 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import kg.geektech.customcaps.R
-import kg.geektech.customcaps.databinding.FragmentNewPasswordBinding
+import kg.geektech.customcaps.data.caps.Caps
+import kg.geektech.customcaps.databinding.FragmentFavoritesBinding
+import kg.geektech.customcaps.ui.fragments.mainPage.MainAdapter
 
-class NewPasswordFragment : Fragment() {
+class FavoritesFragment : Fragment() {
 
-    private lateinit var binding: FragmentNewPasswordBinding
+    private lateinit var binding: FragmentFavoritesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentNewPasswordBinding.inflate(inflater, container, false)
+        binding = FragmentFavoritesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initListeners()
+        initRecyclerView()
     }
 
-    private fun initListeners() {
-
+    private fun initRecyclerView() {
+        val adapter = MainAdapter(Caps().caps)
+        binding.rvFavorites.adapter = adapter
+        adapter.setOnItemClickListener(object : MainAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                navigateTo(R.id.capFragment)
+            }
+        })
     }
 
     private fun navigateTo(resId: Int) {

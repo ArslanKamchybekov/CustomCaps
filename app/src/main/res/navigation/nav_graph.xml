@@ -50,4 +50,20 @@
         android:name="kg.geektech.customcaps.ui.fragments.user.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.orders.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="kg.geektech.customcaps.ui.fragments.orderDetail.OrderDetailFragment"
+        android:label="fragment_order_detail"
+        tools:layout="@layout/fragment_order_detail" />
+
 </navigation>

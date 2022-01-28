@@ -13,7 +13,7 @@
         tools:ignore="MenuTitle" />
 
     <item
-        android:id="@+id/likeFragmentBottom"
+        android:id="@+id/favoritesFragmentBottom"
         android:icon="@drawable/ic_favourite"
         tools:ignore="MenuTitle" />
 

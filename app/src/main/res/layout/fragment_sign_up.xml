@@ -72,7 +72,7 @@
             android:drawableStart="@drawable/ic_number"
             android:drawablePadding="16dp"
             android:hint="@string/number"
-            android:inputType="number"
+            android:inputType="phone"
             android:padding="20dp"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
