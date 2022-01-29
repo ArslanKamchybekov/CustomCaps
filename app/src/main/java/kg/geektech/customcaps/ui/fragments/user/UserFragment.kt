@@ -4,15 +4,18 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import kg.geektech.customcaps.R
 import kg.geektech.customcaps.databinding.FragmentUserBinding
 import kg.geektech.customcaps.prefs.Prefs
 
@@ -89,11 +92,21 @@ class UserFragment : Fragment() {
                 prefs!!.stringNumber = binding.etNumber.text.toString()
                 prefs!!.stringLocation = binding.etLocation.text.toString()
             }
-            Toast.makeText(
-                requireContext(),
-                "Вы успешно изменили данные профиля",
-                Toast.LENGTH_SHORT
-            ).show()
+            showToast("Данные успешно изменены")
         }
     }
+
+    private fun showToast(message: String) {
+        val toastLayout = layoutInflater.inflate(
+            R.layout.main_toast,
+            activity?.findViewById(R.id.main_toast)
+        )
+        toastLayout.findViewById<TextView>(R.id.tv_main_toast).text = message
+        val toast = Toast(requireContext())
+        toast.setGravity(Gravity.CENTER, 0, 0)
+        toast.duration = Toast.LENGTH_SHORT
+        toast.view = toastLayout
+        toast.show()
+    }
+
 }

@@ -2,14 +2,14 @@ package kg.geektech.customcaps.ui.fragments.cap
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.core.view.isVisible
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
 import kg.geektech.customcaps.R
 import kg.geektech.customcaps.data.caps.Caps
@@ -40,32 +40,13 @@ class CapFragment : Fragment() {
             requireActivity().onBackPressed()
         }
         binding.ivFavoriteUnselected.setOnClickListener {
-            if (binding.ivFavoriteUnselected.isVisible) {
-                binding.ivFavoriteUnselected.visibility = View.GONE
-                binding.ivFavoriteSelected.visibility = View.VISIBLE
-            } else {
-                binding.ivFavoriteSelected.visibility = View.GONE
-                binding.ivFavoriteUnselected.visibility = View.VISIBLE
-            }
-
+            binding.ivFavoriteUnselected.visibility = View.GONE
+            binding.ivFavoriteSelected.visibility = View.VISIBLE
         }
         binding.btnAddToShoppingCart.setOnClickListener {
-            val bottomSheetDialog = BottomSheetDialog(
-                requireContext(), R.style.BottomSheetDialogTheme
-            )
-            val bottomSheetView = LayoutInflater.from(requireContext())
-                .inflate(
-                    R.layout.bottom_sheet_add,
-                    binding.root.findViewById(R.id.bottomSheet)
-                ) as LinearLayout?
-            bottomSheetView?.findViewById<View>(R.id.iv_close)?.setOnClickListener {
-                bottomSheetDialog.dismiss()
-            }
-            bottomSheetView?.let { it1 -> bottomSheetDialog.setContentView(it1) }
-            bottomSheetDialog.show()
+            showToast("Товар добавлен в корзину")
         }
     }
-
 
     private fun initViews() {
         val adapterCaps = MainAdapter(Caps().caps)
@@ -96,5 +77,18 @@ class CapFragment : Fragment() {
             activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
         val navController = navHostFragment.navController
         navController.navigate(resId)
+    }
+
+    private fun showToast(message: String) {
+        val toastLayout = layoutInflater.inflate(
+            R.layout.main_toast,
+            activity?.findViewById(R.id.main_toast)
+        )
+        toastLayout.findViewById<TextView>(R.id.tv_main_toast).text = message
+        val toast = Toast(requireContext())
+        toast.setGravity(Gravity.CENTER, 0, 0)
+        toast.duration = Toast.LENGTH_SHORT
+        toast.view = toastLayout
+        toast.show()
     }
 }

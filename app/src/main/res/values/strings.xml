@@ -60,4 +60,6 @@
     <string name="cart">Корзина</string>
     <string name="sum">Сумма</string>
     <string name="delivery">Доставка</string>
+    <string name="toast_tv">Ваш заказ принят, \nОжидайте, очень скоро с Вами свяжутся</string>
+    <string name="to_main">На главную</string>
 </resources>

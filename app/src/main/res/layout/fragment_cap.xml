@@ -51,7 +51,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="600dp"
-            app:cardCornerRadius="50dp">
+            app:cardCornerRadius="24dp">
 
             <LinearLayout
                 android:id="@+id/tv_container"

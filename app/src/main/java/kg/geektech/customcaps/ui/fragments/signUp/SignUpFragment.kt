@@ -7,14 +7,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import com.google.firebase.auth.FirebaseAuth
 import kg.geektech.customcaps.R
 import kg.geektech.customcaps.databinding.FragmentSignUpBinding
 
 class SignUpFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUpBinding
-    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +24,6 @@ class SignUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        auth = FirebaseAuth.getInstance()
         initListeners()
     }
 

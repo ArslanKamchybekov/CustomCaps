@@ -5,9 +5,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.google.firebase.auth.FirebaseAuth
 import kg.geektech.customcaps.R
 import kg.geektech.customcaps.databinding.ActivityMainBinding
+import kg.geektech.customcaps.ui.fragments.cart.CartFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,11 +29,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkUser() {
-        if (FirebaseAuth.getInstance().currentUser != null) {
-            navController.navigate(R.id.mainFragment)
-        } else {
-            navController.navigate(R.id.authFragment)
-        }
     }
 
     private fun initBottomView() {
@@ -42,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileFragmentBottom -> navController.navigate(R.id.profileFragment)
                 R.id.mainFragmentBottom -> navController.navigate(R.id.mainFragment)
                 R.id.favoritesFragmentBottom -> navController.navigate(R.id.favoritesFragment)
+                R.id.cartFragmentBottom -> CartFragment().show(supportFragmentManager, "tag")
             }
             true
         }

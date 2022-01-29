@@ -2,10 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bottomSheet"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="16dp"
+    android:layout_height="wrap_content"
     android:background="@drawable/bg_bottom_sheet"
     android:orientation="vertical">
 
@@ -20,41 +18,49 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:gravity="center"
         android:orientation="horizontal"
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:id="@+id/iv_close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="24dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:src="@drawable/ic_close"
             tools:ignore="ContentDescription" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <TextView
             android:id="@+id/tv_sort"
-            android:layout_width="230dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="24dp"
-            android:gravity="center"
             android:text="@string/cart"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_gravity="center"
-            android:layout_margin="24dp"
-            android:src="@drawable/ic_delete" />
+            android:src="@drawable/ic_delete"
+            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
@@ -117,7 +123,8 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/img_m_size" />
+                android:src="@drawable/img_m_size"
+                tools:ignore="ContentDescription" />
 
         </LinearLayout>
 
@@ -181,16 +188,21 @@
 
     </LinearLayout>
 
-
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_buy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/orange"
-        android:paddingVertical="24dp"
+        android:paddingVertical="20dp"
         android:text="@string/buy"
         android:textAllCaps="false"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:cornerRadius="24dp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
 
 </LinearLayout>

@@ -27,6 +27,13 @@ class OrdersFragment : Fragment(), OrderAdapter.OnItemClick {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        initListeners()
+    }
+
+    private fun initListeners() {
+        binding.fabBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     private fun initViews() {
