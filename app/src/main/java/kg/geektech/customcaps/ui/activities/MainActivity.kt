@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bottomViewVisibility() {
-        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.authFragment ||
                 destination.id == R.id.signInFragment ||
                 destination.id == R.id.signUpFragment ||

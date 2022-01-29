@@ -43,7 +43,7 @@ class MainFragment : Fragment() {
             )
             val bottomSheetView = LayoutInflater.from(requireContext())
                 .inflate(
-                    R.layout.bottom_sheet,
+                    R.layout.bottom_sheet_sort,
                     binding.root.findViewById(R.id.bottomSheet)
                 ) as LinearLayout?
             bottomSheetView?.findViewById<View>(R.id.iv_close)?.setOnClickListener {
