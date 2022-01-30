@@ -11,7 +11,9 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.button.MaterialButton
 import kg.geektech.customcaps.R
+import kg.geektech.customcaps.data.caps.Caps
 import kg.geektech.customcaps.databinding.FragmentCartBinding
+
 
 class CartFragment : BottomSheetDialogFragment() {
 
@@ -30,6 +32,12 @@ class CartFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
+        initViews()
+    }
+
+    private fun initViews() {
+        val adapter = CartAdapter(Caps().caps)
+        binding.rvCart.adapter = adapter
     }
 
     private fun initListeners() {
@@ -52,6 +60,7 @@ class CartFragment : BottomSheetDialogFragment() {
             dismiss()
         }
     }
+
 
     override fun onStart() {
         super.onStart()

@@ -60,6 +60,7 @@ class ProfileFragment : Fragment() {
             "No"
         ) { dialog: DialogInterface, _: Int -> dialog.cancel() }
         val alert11 = builder1.create()
+        navigateTo(R.id.authFragment)
         alert11.show()
     }
 }

@@ -46,6 +46,9 @@ class SortFragment : BottomSheetDialogFragment() {
         binding.btnPopular.setOnClickListener {
             binding.btnPopular.setBackgroundColor(resources.getColor(R.color.orange))
         }
+        binding.btnApply.setOnClickListener {
+            dismiss()
+        }
     }
 
     override fun onStart() {
