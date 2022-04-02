@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:paddingHorizontal="15dp"
-    tools:context=".ui.fragments.mainPage.MainFragment">
+    tools:context=".presentation.fragments.mainPage.MainFragment">
 
     <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="UselessParent">
@@ -36,13 +37,23 @@
                     android:textColor="@color/black"
                     android:textColorHint="@color/grey" />
 
-                <ImageView
-                    android:id="@+id/iv_sort"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="24dp"
-                    android:src="@drawable/ic_sort" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="60dp"
+                    android:layout_marginStart="16dp"
+                    android:backgroundTint="@color/light_grey"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_sort"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_sort"
+                        android:layout_gravity="center"
+                        android:padding="10dp"/>
+
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 

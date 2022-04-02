@@ -12,8 +12,8 @@
     <string name="confirm_password">Подтвердите пароль</string>
     <string name="sign_up">Регистрация</string>
     <string name="or">────────── или ──────────</string>
-    <string name="already_have">Уже есть аккаунт? Войти</string>
-    <string name="signup">Еще не зарегистрировались? Регистрация</string>
+    <string name="already_have">Уже есть аккаунт?</string>
+    <string name="signup">Еще не зарегистрировались?</string>
     <string name="forgot">Забыли пароль? Восстановить пароль</string>
     <string name="search">Поиск</string>
     <string name="popular_brands">Популярные Бренды</string>
@@ -63,4 +63,8 @@
     <string name="toast_tv">Ваш заказ принят, \nОжидайте, очень скоро с Вами свяжутся</string>
     <string name="to_main">На главную</string>
     <string name="_0">0</string>
+    <string name="empty">Корзина пуста</string>
+    <string name="bishkek">Бишкек</string>
+    <string name="_2019">2019</string>
+    <string name="_2018">2018</string>
 </resources>

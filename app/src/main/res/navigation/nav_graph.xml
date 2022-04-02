@@ -7,72 +7,72 @@
 
     <fragment
         android:id="@+id/authFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.auth.AuthFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.auth.AuthFragment"
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth" />
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.signUp.SignUpFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.signUp.SignUpFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/signInFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.signIn.SignInFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.signIn.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" />
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.newPassword.NewPasswordFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.newPassword.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" />
     <fragment
         android:id="@+id/mainFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.mainPage.MainFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.mainPage.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/seeAllFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.seeAll.SeeAllFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.seeAll.SeeAllFragment"
         android:label="fragment_see_all"
         tools:layout="@layout/fragment_see_all" />
     <fragment
         android:id="@+id/capFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.cap.CapFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.cap.CapFragment"
         android:label="fragment_cap"
         tools:layout="@layout/fragment_cap" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.profile.ProfileFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/userFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.user.UserFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.user.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.favorites.FavoritesFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.favorites.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/ordersFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.orders.OrdersFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.orders.OrdersFragment"
         android:label="fragment_orders"
         tools:layout="@layout/fragment_orders" />
     <fragment
         android:id="@+id/orderDetailFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.orderDetail.OrderDetailFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.orderDetail.OrderDetailFragment"
         android:label="fragment_order_detail"
         tools:layout="@layout/fragment_order_detail" />
     <fragment
         android:id="@+id/cartFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.cart.CartFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.cart.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart"/>
     <fragment
         android:id="@+id/sortFragment"
-        android:name="kg.geektech.customcaps.ui.fragments.sort.SortFragment"
+        android:name="kg.geektech.customcaps.presentation.fragments.sort.SortFragment"
         android:label="fragment_sort"
         tools:layout="@layout/fragment_sort"/>
 

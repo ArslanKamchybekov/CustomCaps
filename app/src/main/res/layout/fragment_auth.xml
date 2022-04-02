@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_auth"
     android:orientation="vertical"
-    tools:context=".ui.fragments.auth.AuthFragment">
+    tools:context=".presentation.fragments.auth.AuthFragment">
 
     <LinearLayout
         android:id="@+id/container"

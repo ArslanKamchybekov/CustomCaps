@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.fragments.seeAll.SeeAllFragment"
+    tools:context=".presentation.fragments.seeAll.SeeAllFragment"
     tools:ignore="ScrollViewCount">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
