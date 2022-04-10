@@ -10,7 +10,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import kg.geektech.customcaps.R
 import kg.geektech.customcaps.databinding.FragmentSignInBinding
 
-class SignInFragment : Fragment() {
+class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
     private val binding: FragmentSignInBinding by viewBinding()
 
